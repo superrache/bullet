@@ -258,7 +258,7 @@
     <!-- Cartes à collectionner -->
     <string name="badges_tab_badges">Badges</string>
     <string name="badges_tab_cards">Cartes (%1$d)</string>
-    <string name="cards_intro">Une carte par jour, tirée en direct de Wikipédia dès que ta journée est renseignée. Plus elle est réussie, plus la carte est rare : 100 % → légendaire, 50 % et plus → rare.</string>
+    <string name="cards_intro" formatted="false">Une carte par jour, tirée en direct de Wikipédia dès que ta journée est renseignée. Plus elle est réussie, plus la carte est rare : 100 % → légendaire, 50 % et plus → rare.</string>
     <plurals name="cards_count">
         <item quantity="one">%1$d carte</item>
         <item quantity="other">%1$d cartes</item>

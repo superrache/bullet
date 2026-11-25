@@ -53,3 +53,45 @@ app/           Android : Room, DataStore, Hilt, WorkManager, Compose (Material 3
 | `ReminderSchedulerTest` | calcul du prochain rappel, jour logique (RG-02) |
 | `HabitCardTest` | carte de saisie rapide (Compose) |
 | `AppJourneyTest` | parcours réel (Hilt + Room + catalogue) : onboarding, saisie, badge, calendrier, badges, fiches — avec captures |
+
+## Publier une version
+
+### Clé de signature (une seule fois)
+
+La clé release signe toutes les versions : **sans elle, plus aucune mise à jour possible** (Android refuse
+d'installer une version signée autrement). À sauvegarder hors du projet (gestionnaire de mots de passe, clé USB).
+
+1. `keystore.properties` à la racine (non versionné) :
+
+   ```properties
+   storeFile=release.jks
+   storePassword=…
+   keyAlias=bullet
+   keyPassword=…        # identique à storePassword (format PKCS12)
+   ```
+
+2. Le keystore (non versionné, `*.jks`), avec les mêmes mots de passe :
+
+   ```bash
+   keytool -genkeypair -keystore release.jks -storetype PKCS12 -alias bullet \
+     -keyalg RSA -keysize 4096 -validity 10000 -dname "CN=Bullet"
+   ```
+
+Sans `keystore.properties`, `assembleRelease` produit un APK non signé.
+
+### Construire la version
+
+```bash
+./release.sh 0.2.0
+```
+
+Le script incrémente `versionCode`, fixe `versionName`, lance tests, lint et build release, vérifie que l'APK
+n'est pas signé avec la clé de debug, puis l'écrit dans `app/build/outputs/apk/release/bullet-<version>-release.apk`.
+En cas d'échec, la version est restaurée.
+
+Il fonctionne sur le Mac (SDK cherché dans `ANDROID_HOME`, puis `~/Library/Android/sdk` — `local.properties`
+pointe vers le SDK du conteneur) ou dans le conteneur :
+`docker compose run --rm life-control-dev ./release.sh 0.2.0`.
+
+> L'APK release n'a pas la même signature que l'APK debug : pour passer de l'un à l'autre sur un téléphone, il faut
+> désinstaller l'application, **ce qui efface ses données**. Faire un export (Réglages → Exporter) avant.

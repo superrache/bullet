@@ -7,3 +7,5 @@ local.properties
 captures/
 *.keystore
 CLAUDE.md
+keystore.properties
+*.jks

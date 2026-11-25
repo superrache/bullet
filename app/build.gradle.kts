@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -17,13 +19,28 @@ android {
         applicationId = "fr.lifecontrol.app"
         minSdk = 26
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    // Signature release : keystore.properties (non versionné) à la racine, cf. README « Publier une version ».
+    val keystoreFile = rootProject.file("keystore.properties")
+    val releaseSigning = if (keystoreFile.exists()) {
+        val props = Properties().apply { keystoreFile.inputStream().use { load(it) } }
+        signingConfigs.create("release") {
+            storeFile = rootProject.file(props.getProperty("storeFile"))
+            storePassword = props.getProperty("storePassword")
+            keyAlias = props.getProperty("keyAlias")
+            keyPassword = props.getProperty("keyPassword")
+        }
+    } else {
+        null
     }
 
     buildTypes {
         release {
+            signingConfig = releaseSigning
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -62,6 +79,13 @@ kotlin {
 
 room {
     schemaDirectory("$projectDir/schemas")
+}
+
+// Lint analyse les sources générées par KSP pour les tests sans dépendre de la tâche qui les produit :
+// en build parallèle, KSP les régénère pendant l'analyse (FileNotFoundException dans lintAnalyze*UnitTest).
+tasks.configureEach {
+    val variant = Regex("^lint(?:Vital)?Analyze(\\w+?)(UnitTest|AndroidTest)$").find(name)?.groupValues ?: return@configureEach
+    dependsOn("ksp${variant[1]}${variant[2]}Kotlin")
 }
 
 dependencies {
