@@ -9,3 +9,4 @@ captures/
 CLAUDE.md
 keystore.properties
 *.jks
+.DS_Store

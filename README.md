@@ -7,6 +7,14 @@ vue d'ensemble par période et badges à collectionner.
 
 Spécifications : [`docs/SPECIFICATIONS.md`](docs/SPECIFICATIONS.md).
 
+## Installer
+
+[<img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png"
+  alt="Obtenir avec Obtainium" height="54">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/superrache/bullet)
+
+Obtainium installe l'APK publié dans les [releases GitHub](https://github.com/superrache/bullet/releases)
+et propose les mises à jour automatiquement.
+
 ## Démarrer
 
 Dans le conteneur de dev (`docker compose run life-control-dev`) :
