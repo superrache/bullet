@@ -222,8 +222,8 @@ object BadgeRules {
     }
 
     /** Badges thématiques liés à un modèle du catalogue : meilleure série d'au moins 30 jours. */
-    private fun thematicStreak(id: String, templateId: String) = object : BadgeRule(id, BadgeScope.HABIT) {
-        override fun appliesTo(habit: Habit) = habit.templateId == templateId && !habit.isWeekly()
+    private fun thematicStreak(id: String, vararg templateIds: String) = object : BadgeRule(id, BadgeScope.HABIT) {
+        override fun appliesTo(habit: Habit) = habit.templateId in templateIds && !habit.isWeekly()
         override fun tiers(habit: Habit?) = listOf(30L)
         override fun unit(habit: Habit?) = BadgeUnit.DAYS
         override fun metric(snapshot: BadgeSnapshot, history: HabitHistory?) = history!!.streak.best.toLong()
@@ -231,7 +231,8 @@ object BadgeRules {
 
     val lungsFree = thematicStreak("lungs_free", "smoking")
     val dryMonth = thematicStreak("dry_month", "alcohol")
-    val veggie = thematicStreak("veggie", "meat")
+    /** « meat » : ancien modèle « Viande », fusionné dans « Manger végétarien ». */
+    val veggie = thematicStreak("veggie", "vegetarian", "meat")
 
     val bookworm = object : BadgeRule("bookworm", BadgeScope.HABIT) {
         override fun appliesTo(habit: Habit) = habit.templateId == "reading" && habit.trackingMode == TrackingMode.QUANTITY

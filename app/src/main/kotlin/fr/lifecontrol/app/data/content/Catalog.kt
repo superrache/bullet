@@ -43,10 +43,55 @@ data class HabitTemplate(
     val summary: String,
     val help: List<String> = emptyList(),
     val article: Article,
+    /**
+     * Façons de suivre proposées à la création (ex. « Journées végétariennes » ou « Compter mes repas
+     * avec viande »). La première correspond aux valeurs par défaut du modèle.
+     */
+    val variants: List<HabitVariant> = emptyList(),
 ) {
     val defaultFrequency: Frequency
         get() = if (frequency == "TIMES_PER_WEEK") Frequency.TimesPerWeek(timesPerWeek ?: 3) else Frequency.Daily
+
+    fun variant(id: String?): HabitVariant? = variants.firstOrNull { it.id == id }
+
+    /** Modèle avec les réglages de [variant] appliqués (même identifiant de modèle). */
+    fun withVariant(variant: HabitVariant?): HabitTemplate = if (variant == null) this else copy(
+        name = variant.name ?: name,
+        emoji = variant.emoji ?: emoji,
+        direction = variant.direction ?: direction,
+        mode = variant.mode ?: mode,
+        unit = variant.unit ?: unit,
+        step = variant.step ?: step,
+        threshold = variant.threshold ?: threshold,
+        frequency = variant.frequency ?: frequency,
+        timesPerWeek = variant.timesPerWeek ?: timesPerWeek,
+    )
 }
+
+/** Variante de suivi d'un modèle : seuls les champs renseignés remplacent ceux du modèle. */
+@Serializable
+data class HabitVariant(
+    val id: String,
+    val label: String,
+    val description: String,
+    val name: String? = null,
+    val emoji: String? = null,
+    val direction: Direction? = null,
+    val mode: TrackingMode? = null,
+    val unit: String? = null,
+    val step: Double? = null,
+    val threshold: Double? = null,
+    val frequency: String? = null,
+    val timesPerWeek: Int? = null,
+)
+
+/**
+ * Anciens identifiants de modèles fusionnés dans un autre. « Viande » (arrêter) et « Journée végétarienne »
+ * (commencer) faisaient doublon : ils sont réunis dans « Manger végétarien ».
+ */
+val LEGACY_TEMPLATE_IDS: Map<String, String> = mapOf("meat" to "vegetarian")
+
+fun canonicalTemplateId(id: String?): String? = id?.let { LEGACY_TEMPLATE_IDS[it] ?: it }
 
 @Serializable
 data class Article(
@@ -100,7 +145,8 @@ class CatalogRepository @Inject constructor(
         return json.decodeFromString(Catalog.serializer(), text)
     }
 
-    fun template(id: String?): HabitTemplate? = id?.let { catalog.templates.firstOrNull { t -> t.id == id } }
+    fun template(id: String?): HabitTemplate? =
+        canonicalTemplateId(id)?.let { cid -> catalog.templates.firstOrNull { it.id == cid } }
 
     fun badge(id: String): BadgeMeta? = catalog.badges.firstOrNull { it.id == id }
 

@@ -179,6 +179,32 @@ open class AppJourneyTest {
         }
     }
 
+    private fun hasScrollAxis(vertical: Boolean) = androidx.compose.ui.test.SemanticsMatcher.keyIsDefined(
+        if (vertical) androidx.compose.ui.semantics.SemanticsProperties.VerticalScrollAxisRange
+        else androidx.compose.ui.semantics.SemanticsProperties.HorizontalScrollAxisRange,
+    )
+
+    /** « Manger végétarien » : le choix de la façon de suivre pré-remplit sens, mode, unité et seuil. */
+    @Test
+    fun addHabitWithTrackingVariant() {
+        runBlocking { settingsRepository.update { it.copy(onboardingDone = true, firstName = "Alex") } }
+        ActivityScenario.launch(MainActivity::class.java).use {
+            waitForText("Ajouter une habitude")
+            compose.onNodeWithText("Ajouter une habitude").performClick()
+            compose.onNode(hasScrollToNodeAction() and hasScrollAxis(vertical = true))
+                .performScrollToNode(hasText("Manger végétarien"))
+            compose.onNodeWithText("Manger végétarien").performClick()
+            waitForText("Comment veux-tu suivre ?")
+            compose.onNodeWithText("Compter mes repas avec viande").performClick()
+            waitForText("Moins de viande")
+            waitForText("Maximum par jour")
+            shot("08_edit_variants")
+            compose.onNodeWithText("Compter mes repas végétariens").performClick()
+            waitForText("Repas végétariens")
+            waitForText("Minimum par jour")
+        }
+    }
+
     @Test
     fun screensWithHistory() {
         seedHistory()

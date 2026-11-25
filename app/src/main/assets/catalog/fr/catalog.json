@@ -107,7 +107,20 @@
      "Organisation mondiale de la santé"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "count",
+     "label": "Compter mes cigarettes",
+     "description": "Si tu craques, tu notes combien ; 0 = journée réussie. Le plus précis pour les économies."
+    },
+    {
+     "id": "days",
+     "label": "Journées sans tabac",
+     "description": "Chaque jour : tenu ou craqué, sans compter.",
+     "mode": "BINARY"
+    }
+   ]
   },
   {
    "id": "alcohol",
@@ -167,41 +180,21 @@
      "Santé publique France"
     ],
     "updated": "2026-11"
-   }
-  },
-  {
-   "id": "meat",
-   "category": "food",
-   "name": "Viande",
-   "emoji": "🥩",
-   "color": 9,
-   "direction": "QUIT",
-   "mode": "BINARY",
-   "summary": "Des journées sans viande.",
-   "article": {
-    "sections": [
-     {
-      "title": "Pourquoi réduire",
-      "paragraphs": [
-       "Réduire la viande, en particulier la viande rouge et la charcuterie, est recommandé pour la santé. C'est aussi l'un des gestes les plus efficaces pour réduire son empreinte environnementale."
-      ]
-     },
-     {
-      "title": "Par où commencer",
-      "bullets": [
-       "Commence par 1 ou 2 jours sans viande par semaine, puis augmente.",
-       "Les légumineuses (lentilles, pois chiches, haricots) associées aux céréales apportent des protéines complètes.",
-       "Teste une nouvelle recette végétarienne chaque semaine.",
-       "Œufs, produits laitiers, tofu, tempeh : de nombreuses sources de protéines existent."
-      ]
-     }
-    ],
-    "sources": [
-     "Programme national nutrition santé (mangerbouger.fr)",
-     "ANSES"
-    ],
-    "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "count",
+     "label": "Compter mes verres",
+     "description": "Tu notes tes verres ; journée réussie si tu restes sous ton maximum."
+    },
+    {
+     "id": "days",
+     "label": "Journées sans alcool",
+     "description": "Chaque jour : tenu ou craqué, sans compter.",
+     "direction": "QUIT",
+     "mode": "BINARY"
+    }
+   ]
   },
   {
    "id": "sugar",
@@ -235,7 +228,21 @@
      "Organisation mondiale de la santé"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "days",
+     "label": "Journées sans sucre",
+     "description": "Chaque jour : tenu ou craqué."
+    },
+    {
+     "id": "count",
+     "label": "Compter mes sucreries",
+     "description": "Si tu craques, tu notes combien ; 0 = journée réussie.",
+     "mode": "QUANTITY",
+     "unit": "sucreries"
+    }
+   ]
   },
   {
    "id": "social_media",
@@ -340,7 +347,20 @@
      "Programme national nutrition santé (mangerbouger.fr)"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "count",
+     "label": "Compter mes grignotages",
+     "description": "Si tu craques, tu notes combien ; 0 = journée réussie."
+    },
+    {
+     "id": "days",
+     "label": "Journées sans grignotage",
+     "description": "Chaque jour : tenu ou craqué, sans compter.",
+     "mode": "BINARY"
+    }
+   ]
   },
   {
    "id": "gambling",
@@ -458,7 +478,21 @@
      "Santé publique France"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "days",
+     "label": "Journées sans cannabis",
+     "description": "Chaque jour : tenu ou craqué."
+    },
+    {
+     "id": "count",
+     "label": "Compter mes consommations",
+     "description": "Si tu craques, tu notes combien ; 0 = journée réussie.",
+     "mode": "QUANTITY",
+     "unit": "joints"
+    }
+   ]
   },
   {
    "id": "nail_biting",
@@ -560,7 +594,20 @@
      "Programme national nutrition santé (mangerbouger.fr)"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "minutes",
+     "label": "Compter mes minutes",
+     "description": "Une séance compte quand tu atteins ta durée minimum."
+    },
+    {
+     "id": "sessions",
+     "label": "Séance faite ou non",
+     "description": "Un simple tap après chaque séance, sans chronométrer.",
+     "mode": "BINARY"
+    }
+   ]
   },
   {
    "id": "reading",
@@ -596,7 +643,20 @@
      "Centre national du livre"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "pages",
+     "label": "Compter mes pages",
+     "description": "Journée réussie quand tu atteins ton minimum de pages."
+    },
+    {
+     "id": "days",
+     "label": "Lire chaque jour",
+     "description": "Un simple tap quand tu as lu, sans compter.",
+     "mode": "BINARY"
+    }
+   ]
   },
   {
    "id": "vegan",
@@ -630,19 +690,57 @@
      "Programme national nutrition santé (mangerbouger.fr)"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "days",
+     "label": "Journées véganes",
+     "description": "Chaque jour : as-tu mangé 100 % végétal ? Succès ou échec."
+    },
+    {
+     "id": "meals",
+     "label": "Compter mes repas véganes",
+     "description": "Objectif : au moins 1 repas végan par jour. Tu vois le total sur la période de ton choix.",
+     "name": "Repas véganes",
+     "mode": "QUANTITY",
+     "unit": "repas véganes",
+     "threshold": 1
+    }
+   ]
   },
   {
    "id": "vegetarian",
    "category": "food",
-   "name": "Journée végétarienne",
+   "name": "Manger végétarien",
    "emoji": "🥗",
    "color": 2,
    "direction": "START",
    "mode": "BINARY",
-   "summary": "Ni viande ni poisson aujourd'hui.",
+   "summary": "Moins de viande, plus de végétal : à ton rythme.",
    "article": {
     "sections": [
+     {
+      "title": "Végétarien ou moins de viande ?",
+      "paragraphs": [
+       "C'est le même objectif vu de deux côtés : manger plus végétal. Choisis la façon de suivre qui te motive le plus : des journées végétariennes, le nombre de repas végétariens, ou le nombre de repas avec viande à réduire.",
+       "Végétarien veut dire ni viande ni poisson. Si tu veux seulement réduire la viande, compte tes repas avec viande."
+      ]
+     },
+     {
+      "title": "Pourquoi réduire",
+      "paragraphs": [
+       "Réduire la viande, en particulier la viande rouge et la charcuterie, est recommandé pour la santé. C'est aussi l'un des gestes les plus efficaces pour réduire son empreinte environnementale."
+      ]
+     },
+     {
+      "title": "Par où commencer",
+      "bullets": [
+       "Commence par 1 ou 2 jours sans viande par semaine, puis augmente.",
+       "Les légumineuses (lentilles, pois chiches, haricots) associées aux céréales apportent des protéines complètes.",
+       "Teste une nouvelle recette végétarienne chaque semaine.",
+       "Œufs, produits laitiers, tofu, tempeh : de nombreuses sources de protéines existent."
+      ]
+     },
      {
       "title": "Conseils",
       "bullets": [
@@ -653,10 +751,38 @@
      }
     ],
     "sources": [
+     "ANSES",
      "Programme national nutrition santé (mangerbouger.fr)"
     ],
     "updated": "2026-11"
-   }
+   },
+   "variants": [
+    {
+     "id": "days",
+     "label": "Journées végétariennes",
+     "description": "Chaque jour : as-tu mangé végétarien toute la journée ? Succès ou échec."
+    },
+    {
+     "id": "veggie_meals",
+     "label": "Compter mes repas végétariens",
+     "description": "Objectif : au moins 1 repas végétarien par jour. Tu vois le total sur la période de ton choix.",
+     "name": "Repas végétariens",
+     "mode": "QUANTITY",
+     "unit": "repas végétariens",
+     "threshold": 1
+    },
+    {
+     "id": "meat_meals",
+     "label": "Compter mes repas avec viande",
+     "description": "Objectif : pas plus d'1 repas avec viande par jour. Tu vois le total sur la période de ton choix.",
+     "name": "Moins de viande",
+     "emoji": "🥩",
+     "direction": "LIMIT",
+     "mode": "QUANTITY",
+     "unit": "repas avec viande",
+     "threshold": 1
+    }
+   ]
   },
   {
    "id": "meditation",
@@ -1028,7 +1154,7 @@
    "id": "veggie",
    "emoji": "🥕",
    "title": "Veggie",
-   "description": "30 jours d'affilée sans viande."
+   "description": "30 jours d'affilée dans ton objectif « Manger végétarien »."
   },
   {
    "id": "bookworm",

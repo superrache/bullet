@@ -1,6 +1,7 @@
 package fr.lifecontrol.app.data.repository
 
 import androidx.room.withTransaction
+import fr.lifecontrol.app.data.content.canonicalTemplateId
 import fr.lifecontrol.app.data.db.AppDatabase
 import fr.lifecontrol.app.data.db.BadgeUnlockEntity
 import fr.lifecontrol.app.data.db.CardEntity
@@ -94,7 +95,9 @@ class ExportRepository @Inject constructor(
         return file
     }
 
-    suspend fun import(file: ExportFile, mode: ImportMode) {
+    suspend fun import(exported: ExportFile, mode: ImportMode) {
+        // Sauvegarde antérieure à la fusion de modèles (ex. « Viande ») : on la rattache au modèle actuel.
+        val file = exported.copy(habits = exported.habits.map { it.copy(templateId = canonicalTemplateId(it.templateId)) })
         db.withTransaction {
             when (mode) {
                 ImportMode.REPLACE -> replace(file)

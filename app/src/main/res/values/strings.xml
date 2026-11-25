@@ -81,7 +81,7 @@
 
     <!-- Entrée -->
     <string name="label_minutes">Minutes</string>
-    <string name="label_quantity">Quantité</string>
+    <string name="label_quantity">Nombre</string>
     <string name="label_mood">Humeur</string>
     <string name="label_trigger">Déclencheur (en cas d\'écart)</string>
     <string name="label_note">Note</string>
@@ -210,14 +210,16 @@
     <string name="direction_limit">Limiter</string>
     <string name="direction_start">Commencer</string>
     <string name="field_mode">Suivi</string>
-    <string name="mode_binary">Oui / non</string>
-    <string name="mode_quantity">Quantité</string>
+    <string name="field_variant">Comment veux-tu suivre ?</string>
+    <string name="mode_binary">Succès / échec</string>
+    <string name="mode_quantity">Nombre</string>
     <string name="mode_duration">Durée</string>
     <string name="hint_quit_binary">Chaque jour, tu indiques si tu as tenu ou craqué.</string>
-    <string name="hint_quit_quantity">Tu notes ta consommation ; zéro = journée réussie.</string>
-    <string name="hint_limit">Tu notes ta consommation ; la journée est réussie si tu restes sous ton maximum.</string>
-    <string name="hint_start_binary">Un simple tap quand c\'est fait.</string>
-    <string name="hint_start_quantity">La journée est réussie quand tu atteins ton minimum.</string>
+    <string name="hint_quit_quantity">Si tu craques, tu notes combien (cigarettes, verres…) ; zéro = journée réussie. Le total de la période s\'affiche dans les statistiques.</string>
+    <string name="hint_limit">Tu notes combien ; la journée est réussie si tu restes sous ton maximum. Le total de la période s\'affiche dans les statistiques.</string>
+    <string name="hint_start_binary">Chaque jour : succès ou échec, un simple tap quand c\'est fait.</string>
+    <string name="hint_start_quantity">Tu comptes (verres d\'eau, repas végétariens, pages…) ; la journée est réussie quand tu atteins ton minimum. Le total de la période s\'affiche dans les statistiques.</string>
+    <string name="hint_start_duration">Tu notes tes minutes ; la journée est réussie quand tu atteins ton minimum. Le total de la période s\'affiche dans les statistiques.</string>
     <string name="field_unit">Unité</string>
     <string name="field_unit_hint">verres, pages…</string>
     <string name="field_step">Pas des boutons +/−</string>

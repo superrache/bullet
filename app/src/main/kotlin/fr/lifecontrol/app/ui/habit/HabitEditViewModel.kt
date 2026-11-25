@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.lifecontrol.app.data.content.CatalogRepository
+import fr.lifecontrol.app.data.content.HabitTemplate
+import fr.lifecontrol.app.data.content.HabitVariant
 import fr.lifecontrol.app.data.db.ALL_DAYS_MASK
 import fr.lifecontrol.app.data.db.toDays
 import fr.lifecontrol.app.data.db.toMask
@@ -37,6 +39,8 @@ enum class FrequencyKind { DAILY, TIMES_PER_WEEK, DAYS_OF_WEEK }
 data class HabitForm(
     val id: String? = null,
     val templateId: String? = null,
+    /** Façon de suivre choisie parmi celles du modèle (création uniquement). */
+    val variantId: String? = null,
     val name: String = "",
     val emoji: String = "⭐",
     val colorIndex: Int = 0,
@@ -65,6 +69,20 @@ data class HabitForm(
 
 enum class FormError { NAME, THRESHOLD, DAYS }
 
+/** Réglages de suivi tirés d'un modèle (éventuellement d'une de ses variantes). */
+private fun HabitForm.withPreset(t: HabitTemplate, variantId: String?) = copy(
+    variantId = variantId,
+    name = t.name,
+    emoji = t.emoji,
+    direction = t.direction,
+    trackingMode = t.mode,
+    unit = t.unit.orEmpty(),
+    step = Fmt.number(t.step),
+    threshold = t.threshold?.let(Fmt::number).orEmpty(),
+    frequencyKind = if (t.frequency == "TIMES_PER_WEEK") FrequencyKind.TIMES_PER_WEEK else FrequencyKind.DAILY,
+    timesPerWeek = t.timesPerWeek ?: 3,
+)
+
 @HiltViewModel
 class HabitEditViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
@@ -79,6 +97,11 @@ class HabitEditViewModel @Inject constructor(
 
     private val _form = MutableStateFlow(HabitForm(startDate = dateProvider.today.value))
     val form = _form.asStateFlow()
+
+    /** Modèle d'origine, pour proposer ses façons de suivre à la création. */
+    private var template: HabitTemplate? = null
+    private val _variants = MutableStateFlow<List<HabitVariant>>(emptyList())
+    val variants = _variants.asStateFlow()
 
     private val _errors = MutableStateFlow<Set<FormError>>(emptySet())
     val errors = _errors.asStateFlow()
@@ -130,23 +153,17 @@ class HabitEditViewModel @Inject constructor(
                     if (t == null) {
                         _form.value.copy(loaded = true)
                     } else {
+                        template = t
+                        _variants.value = t.variants
+                        val variant = t.variants.firstOrNull()
                         HabitForm(
                             templateId = t.id,
-                            name = t.name,
-                            emoji = t.emoji,
                             colorIndex = t.color,
-                            direction = t.direction,
-                            trackingMode = t.mode,
-                            unit = t.unit.orEmpty(),
-                            step = Fmt.number(t.step),
-                            threshold = t.threshold?.let(Fmt::number).orEmpty(),
-                            frequencyKind = if (t.frequency == "TIMES_PER_WEEK") FrequencyKind.TIMES_PER_WEEK else FrequencyKind.DAILY,
-                            timesPerWeek = t.timesPerWeek ?: 3,
                             startDate = dateProvider.today.value,
                             unitCost = t.unitCostCents?.let { Fmt.number(it / 100.0) }.orEmpty(),
                             baseline = t.baselinePerDay?.let(Fmt::number).orEmpty(),
                             loaded = true,
-                        )
+                        ).withPreset(t.withVariant(variant), variant?.id)
                     }
                 }
             }
@@ -173,6 +190,19 @@ class HabitEditViewModel @Inject constructor(
         }
         _errors.value = emptySet()
         checkDuplicate()
+    }
+
+    /** Applique une façon de suivre du modèle. Le nom et l'icône ne sont remplacés que s'ils n'ont pas été modifiés. */
+    fun selectVariant(id: String) {
+        val t = template ?: return
+        val previous = t.withVariant(t.variant(_form.value.variantId))
+        val next = t.withVariant(t.variant(id))
+        update { f ->
+            f.withPreset(next, id).copy(
+                name = if (f.name == previous.name) next.name else f.name,
+                emoji = if (f.emoji == previous.emoji) next.emoji else f.emoji,
+            )
+        }
     }
 
     fun addReminder(minutes: Int) = update {

@@ -3,6 +3,7 @@ package fr.lifecontrol.app.data
 import com.google.common.truth.Truth.assertThat
 import fr.lifecontrol.app.data.db.AppDatabase
 import fr.lifecontrol.app.data.db.MIGRATION_1_2
+import fr.lifecontrol.app.data.db.MIGRATION_4_5
 import fr.lifecontrol.app.data.repository.HabitDraft
 import fr.lifecontrol.app.data.repository.HabitRepository
 import fr.lifecontrol.domain.model.DayStatus
@@ -20,7 +21,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import java.time.LocalDate
 
-/** Le schéma ne change pas entre v1 et v2 : on applique le SQL de migration sur une base de test. */
+/** Le schéma ne change pas entre v1 et v2, ni entre v4 et v5 : on applique le SQL de migration sur une base de test. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = android.app.Application::class)
 class MigrationTest {
@@ -66,5 +67,22 @@ class MigrationTest {
         // Les autres habitudes oui/non ne sont pas touchées.
         assertThat(repo.getHabit(meat)!!.trackingMode).isEqualTo(TrackingMode.BINARY)
         assertThat(repo.entries.first().single { it.habitId == meat }.done).isFalse()
+    }
+
+    @Test
+    fun meatHabitsMoveToVegetarianTemplate_unchanged() = runTest {
+        val meat = repo.saveHabit(draft("meat", "Viande"), start)
+        val smoking = repo.saveHabit(draft("smoking", "Cigarette"), start)
+        repo.updateEntry(meat, start) { it.copy(done = true) }
+
+        MIGRATION_4_5.migrate(db.openHelper.writableDatabase)
+
+        val habit = repo.getHabit(meat)!!
+        assertThat(habit.templateId).isEqualTo("vegetarian")
+        assertThat(habit.name).isEqualTo("Viande")
+        assertThat(habit.direction).isEqualTo(Direction.QUIT)
+        assertThat(habit.trackingMode).isEqualTo(TrackingMode.BINARY)
+        assertThat(repo.entries.first().single { it.habitId == meat }.done).isTrue()
+        assertThat(repo.getHabit(smoking)!!.templateId).isEqualTo("smoking")
     }
 }

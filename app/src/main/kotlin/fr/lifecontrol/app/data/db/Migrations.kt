@@ -2,6 +2,7 @@ package fr.lifecontrol.app.data.db
 
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import fr.lifecontrol.app.data.content.LEGACY_TEMPLATE_IDS
 
 /**
  * v1 → v2 : le modèle « Grignotage » passe d'un suivi oui/non à un nombre de craquages par jour
@@ -60,4 +61,20 @@ internal const val CARD_TABLE_SQL = "CREATE TABLE IF NOT EXISTS `card` (`id` TEX
     "`text` TEXT, `url` TEXT, `views` INTEGER, `image_url` TEXT, `image_artist` TEXT, `image_license` TEXT, " +
     "`image_license_url` TEXT, `image_page` TEXT, PRIMARY KEY(`id`))"
 
-val ALL_MIGRATIONS = arrayOf(MIGRATION_1_2, MIGRATION_2_4, MIGRATION_3_4)
+/**
+ * v4 → v5 : les modèles « Viande » (arrêter) et « Journée végétarienne » (commencer) sont fusionnés dans
+ * « Manger végétarien ». Les habitudes créées depuis « Viande » sont rattachées au nouveau modèle (fiche,
+ * badge « Veggie ») ; leur nom, leur mode et leur historique ne changent pas. Le schéma ne change pas.
+ */
+val MIGRATION_4_5 = object : Migration(4, 5) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        for ((old, new) in LEGACY_TEMPLATE_IDS) {
+            db.execSQL(
+                "UPDATE habit SET template_id = ?, updated_at = ? WHERE template_id = ?",
+                arrayOf<Any>(new, System.currentTimeMillis(), old),
+            )
+        }
+    }
+}
+
+val ALL_MIGRATIONS = arrayOf(MIGRATION_1_2, MIGRATION_2_4, MIGRATION_3_4, MIGRATION_4_5)

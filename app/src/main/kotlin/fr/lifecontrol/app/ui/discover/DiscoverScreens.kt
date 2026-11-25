@@ -60,6 +60,7 @@ import fr.lifecontrol.app.data.content.Catalog
 import fr.lifecontrol.app.data.content.CatalogRepository
 import fr.lifecontrol.app.data.content.HabitTemplate
 import fr.lifecontrol.app.data.content.HelpResource
+import fr.lifecontrol.app.data.content.canonicalTemplateId
 import fr.lifecontrol.app.data.repository.BadgeService
 import fr.lifecontrol.app.data.repository.JournalRepository
 import fr.lifecontrol.app.ui.components.CardShape
@@ -83,7 +84,7 @@ class DiscoverViewModel @Inject constructor(
 
     /** Modèles déjà suivis (habitudes actives). */
     val tracked: StateFlow<Set<String>> = journalRepository.journal
-        .map { j -> j?.activeHabits?.mapNotNull { it.templateId }?.toSet().orEmpty() }
+        .map { j -> j?.activeHabits?.mapNotNull { canonicalTemplateId(it.templateId) }?.toSet().orEmpty() }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptySet())
 }
 

@@ -20,7 +20,7 @@ class Converters {
         ReminderEntity::class, BadgeUnlockEntity::class, ContentReadEntity::class,
         CardEntity::class,
     ],
-    version = 4,
+    version = 5,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)

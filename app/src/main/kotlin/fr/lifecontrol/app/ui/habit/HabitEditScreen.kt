@@ -24,6 +24,8 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
@@ -34,6 +36,8 @@ import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.FilterChip
@@ -42,6 +46,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButton
 import androidx.compose.material3.SegmentedButtonDefaults
@@ -66,15 +71,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import fr.lifecontrol.app.R
+import fr.lifecontrol.app.data.content.HabitVariant
 import fr.lifecontrol.app.data.db.toDays
 import fr.lifecontrol.app.data.repository.Reminder
 import fr.lifecontrol.app.notifications.Notifications
+import fr.lifecontrol.app.ui.components.CardShape
 import fr.lifecontrol.app.ui.components.SectionTitle
 import fr.lifecontrol.app.ui.theme.HabitPalette
 import fr.lifecontrol.app.ui.util.Fmt
@@ -101,6 +109,7 @@ fun HabitEditScreen(
     val form by viewModel.form.collectAsStateWithLifecycle()
     val errors by viewModel.errors.collectAsStateWithLifecycle()
     val duplicate by viewModel.duplicate.collectAsStateWithLifecycle()
+    val variants by viewModel.variants.collectAsStateWithLifecycle()
     var showEmoji by remember { mutableStateOf(false) }
     var showDate by remember { mutableStateOf(false) }
     var editTimeFor by remember { mutableStateOf<Reminder?>(null) }
@@ -160,6 +169,14 @@ fun HabitEditScreen(
             duplicate?.let { d ->
                 TextButton(onClick = { onOpenHabit(d.id) }, modifier = Modifier.align(Alignment.End)) {
                     Text(stringResource(R.string.action_open_existing, d.name))
+                }
+            }
+            if (form.isNew && variants.size > 1) {
+                SectionTitle(stringResource(R.string.field_variant))
+                Column(Modifier.selectableGroup()) {
+                    variants.forEach { variant ->
+                        VariantOption(variant, selected = form.variantId == variant.id) { viewModel.selectVariant(variant.id) }
+                    }
                 }
             }
             Spacer(Modifier.height(12.dp))
@@ -413,11 +430,36 @@ fun HabitEditScreen(
     }
 }
 
+/** Une façon de suivre proposée par le modèle (ex. « Compter mes repas avec viande »). */
+@Composable
+private fun VariantOption(variant: HabitVariant, selected: Boolean, onClick: () -> Unit) {
+    Card(
+        shape = CardShape,
+        colors = CardDefaults.cardColors(
+            containerColor = if (selected) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerLow,
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 8.dp)
+            .selectable(selected = selected, onClick = onClick, role = Role.RadioButton),
+    ) {
+        Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(selected = selected, onClick = null)
+            Spacer(Modifier.width(12.dp))
+            Column {
+                Text(variant.label, style = MaterialTheme.typography.titleSmall)
+                Text(variant.description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        }
+    }
+}
+
 fun modeHint(direction: Direction, mode: TrackingMode): Int = when {
     direction == Direction.QUIT && mode == TrackingMode.BINARY -> R.string.hint_quit_binary
     direction == Direction.QUIT -> R.string.hint_quit_quantity
     direction == Direction.LIMIT -> R.string.hint_limit
     mode == TrackingMode.BINARY -> R.string.hint_start_binary
+    mode == TrackingMode.DURATION -> R.string.hint_start_duration
     else -> R.string.hint_start_quantity
 }
 
