@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nom de travail : à remplacer par le nom définitif (spécifications §1.3). -->
+    <string name="app_name">Bullet</string>
+    <string name="app_tagline">Reprends le contrôle, à ton rythme.\nTout reste sur ton téléphone.</string>
+
+    <!-- Onglets -->
+    <string name="tab_today">Aujourd\'hui</string>
+    <string name="tab_calendar">Calendrier</string>
+    <string name="tab_badges">Récompenses</string>
+    <string name="tab_discover">Découvrir</string>
+
+    <!-- Actions -->
+    <string name="action_add">Ajouter</string>
+    <string name="action_add_habit">Ajouter une habitude</string>
+    <string name="action_add_this_habit">Suivre cette habitude</string>
+    <string name="action_add_reminder">Ajouter un rappel</string>
+    <string name="action_archive">Archiver</string>
+    <string name="action_unarchive">Désarchiver</string>
+    <string name="action_cancel">Annuler</string>
+    <string name="action_clear">Effacer</string>
+    <string name="action_close">Fermer</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="action_done">Fait</string>
+    <string name="action_not_done">Pas fait</string>
+    <string name="action_held">Tenu 💪</string>
+    <string name="action_slipped">Craqué</string>
+    <string name="action_edit">Modifier</string>
+    <string name="action_ok">OK</string>
+    <string name="action_read_article">Lire la fiche et les conseils</string>
+    <string name="action_save">Enregistrer</string>
+    <string name="action_see_habit">Voir l\'habitude</string>
+
+    <!-- Accessibilité -->
+    <string name="cd_back">Retour</string>
+    <string name="cd_decrement">Diminuer</string>
+    <string name="cd_increment">Augmenter</string>
+    <string name="cd_more">Plus d\'options</string>
+    <string name="cd_move_up">Monter</string>
+    <string name="cd_move_down">Descendre</string>
+    <string name="cd_next">Suivant</string>
+    <string name="cd_previous">Précédent</string>
+    <string name="cd_reorder">Réorganiser</string>
+    <string name="cd_share">Partager</string>
+    <string name="cd_record_zero">Noter zéro aujourd\'hui</string>
+    <string name="cd_undo_done">Annuler « fait »</string>
+
+    <!-- Statuts -->
+    <string name="status_success">Réussi</string>
+    <string name="status_failure">Écart</string>
+    <string name="status_missing">Non renseigné</string>
+    <string name="status_pending">En cours</string>
+    <string name="status_neutral">Non prévu</string>
+    <string name="status_future">À venir</string>
+
+    <!-- Aujourd'hui -->
+    <string name="today_hello">Bonjour 👋</string>
+    <string name="today_hello_name">Bonjour %1$s 👋</string>
+    <string name="today_past_day">Retour sur la journée du</string>
+    <string name="day_previous">Veille</string>
+    <string name="day_next">Lendemain</string>
+    <string name="day_today">Aujourd\'hui</string>
+    <string name="today_empty_title">Prêt·e à reprendre le contrôle ?</string>
+    <string name="today_empty_body">Choisis une première habitude à arrêter, limiter ou commencer. Tu pourras en ajouter autant que tu veux.</string>
+    <string name="today_not_scheduled">Pas prévu ce jour</string>
+    <plurals name="today_summary">
+        <item quantity="one">%1$d / %2$d objectif tenu</item>
+        <item quantity="other">%1$d / %2$d objectifs tenus</item>
+    </plurals>
+    <string name="today_summary_all">Journée parfaite, bravo ! 🎉</string>
+    <string name="today_summary_keep_going">Chaque petit pas compte. Continue !</string>
+    <string name="today_summary_past">Tu peux compléter ou corriger cette journée.</string>
+    <string name="today_summary_rest">Rien de prévu : profite de ta journée.</string>
+    <string name="today_next_badge">Prochain badge : %1$s</string>
+
+    <!-- Après un écart (F-10) -->
+    <string name="slip_title">Ce n\'est qu\'un écart</string>
+    <string name="slip_your_motivation">Ta motivation</string>
+    <string name="slip_read_tips">Lire des conseils</string>
+    <string name="slip_ok">Merci, je repars</string>
+
+    <!-- Entrée -->
+    <string name="label_minutes">Minutes</string>
+    <string name="label_quantity">Quantité</string>
+    <string name="label_mood">Humeur</string>
+    <string name="label_trigger">Déclencheur (en cas d\'écart)</string>
+    <string name="label_note">Note</string>
+    <string name="label_motivation">Ma motivation</string>
+
+    <string name="trigger_stress">Stress</string>
+    <string name="trigger_party">Soirée</string>
+    <string name="trigger_boredom">Ennui</string>
+    <string name="trigger_tiredness">Fatigue</string>
+    <string name="trigger_social">Entourage</string>
+    <string name="trigger_other">Autre</string>
+
+    <!-- Objectifs -->
+    <string name="goal_quit">Zéro</string>
+    <string name="goal_limit">≤ %1$s</string>
+    <string name="goal_start_binary">À faire</string>
+    <string name="goal_start_min">≥ %1$s</string>
+    <string name="freq_daily">tous les jours</string>
+    <string name="freq_n_per_week">N fois par semaine</string>
+    <string name="freq_some_days">Certains jours</string>
+    <plurals name="freq_times_per_week">
+        <item quantity="one">%d fois par semaine</item>
+        <item quantity="other">%d fois par semaine</item>
+    </plurals>
+
+    <plurals name="days">
+        <item quantity="one">%d jour</item>
+        <item quantity="other">%d jours</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="one">%d semaine</item>
+        <item quantity="other">%d semaines</item>
+    </plurals>
+    <plurals name="days_short">
+        <item quantity="one">%d j</item>
+        <item quantity="other">%d j</item>
+    </plurals>
+    <plurals name="weeks_short">
+        <item quantity="one">%d sem.</item>
+        <item quantity="other">%d sem.</item>
+    </plurals>
+    <plurals name="times">
+        <item quantity="one">%d fois</item>
+        <item quantity="other">%d fois</item>
+    </plurals>
+    <plurals name="unit_days">
+        <item quantity="one">jour</item>
+        <item quantity="other">jours</item>
+    </plurals>
+    <plurals name="unit_weeks">
+        <item quantity="one">semaine</item>
+        <item quantity="other">semaines</item>
+    </plurals>
+    <plurals name="unit_months">
+        <item quantity="one">mois</item>
+        <item quantity="other">mois</item>
+    </plurals>
+    <plurals name="unit_quarters">
+        <item quantity="one">trimestre</item>
+        <item quantity="other">trimestres</item>
+    </plurals>
+    <plurals name="unit_years">
+        <item quantity="one">an</item>
+        <item quantity="other">ans</item>
+    </plurals>
+
+    <!-- Calendrier et vue d'ensemble -->
+    <string name="calendar_month">Mois</string>
+    <string name="calendar_overview">Vue d\'ensemble</string>
+    <string name="calendar_all_habits">Toutes</string>
+    <string name="calendar_all_hint">Plus la case est verte, plus la journée est réussie. Touchez un jour pour le compléter.</string>
+    <string name="calendar_empty_title">Ton calendrier t\'attend</string>
+    <string name="calendar_empty_body">Ajoute une habitude depuis l\'onglet Aujourd\'hui pour voir ta progression ici.</string>
+    <string name="archived">archivée</string>
+    <string name="legend_less">Moins</string>
+    <string name="legend_more">Plus</string>
+    <string name="period_week">Semaine</string>
+    <string name="period_month">Mois</string>
+    <string name="period_quarter">Trimestre</string>
+    <string name="period_year">Année</string>
+    <string name="period_all">Depuis le début</string>
+    <string name="period_custom">Personnalisée</string>
+    <string name="overview_heatmap">Carte de chaleur</string>
+    <string name="overview_pixels">Pixels par habitude</string>
+    <string name="legend_pixels_success">Réussi</string>
+    <string name="legend_pixels_failure">Écart</string>
+    <string name="legend_pixels_none">Rien à noter</string>
+    <string name="overview_chart_rate">Taux de réussite (%)</string>
+    <string name="overview_chart_value">Évolution (%1$s)</string>
+    <string name="overview_by_habit">Par habitude</string>
+    <string name="overview_slips">Analyse des écarts</string>
+    <string name="overview_triggers">Déclencheurs</string>
+    <string name="overview_weekdays">Jours les plus difficiles</string>
+    <string name="share_title">Partager ma progression</string>
+    <string name="share_my_progress">Ma progression</string>
+
+    <!-- Statistiques -->
+    <string name="stat_success_rate">Taux de réussite</string>
+    <string name="stat_vs_previous">vs période précédente</string>
+    <string name="stat_current_streak">Série en cours</string>
+    <string name="stat_best_streak">Meilleure série</string>
+    <string name="stat_successes">réussis</string>
+    <string name="stat_failures">écarts</string>
+    <string name="stat_missing">non renseignés</string>
+    <string name="stat_total">Total</string>
+    <string name="stat_average">Moyenne / jour saisi</string>
+    <string name="stat_savings">Économisés</string>
+    <string name="stat_avoided">Non consommés</string>
+
+    <!-- Habitude -->
+    <string name="habit_since">Depuis le %1$s</string>
+    <string name="habit_since_start">Depuis le début</string>
+    <string name="habit_archived_note">Habitude archivée</string>
+    <string name="delete_title">Supprimer définitivement ?</string>
+    <string name="delete_habit_text">L\'habitude et tout son historique seront effacés. Les badges déjà gagnés sont conservés. Pour seulement la mettre de côté, préfère « Archiver ».</string>
+    <string name="delete_keyword">SUPPRIMER</string>
+    <string name="delete_type_keyword">Tapez %1$s pour confirmer</string>
+
+    <!-- Formulaire -->
+    <string name="edit_title_new">Nouvelle habitude</string>
+    <string name="edit_title_edit">Modifier l\'habitude</string>
+    <string name="field_name">Nom</string>
+    <string name="field_icon">Icône</string>
+    <string name="field_direction">Je veux…</string>
+    <string name="direction_quit">Arrêter</string>
+    <string name="direction_limit">Limiter</string>
+    <string name="direction_start">Commencer</string>
+    <string name="field_mode">Suivi</string>
+    <string name="mode_binary">Oui / non</string>
+    <string name="mode_quantity">Quantité</string>
+    <string name="mode_duration">Durée</string>
+    <string name="hint_quit_binary">Chaque jour, tu indiques si tu as tenu ou craqué.</string>
+    <string name="hint_quit_quantity">Tu notes ta consommation ; zéro = journée réussie.</string>
+    <string name="hint_limit">Tu notes ta consommation ; la journée est réussie si tu restes sous ton maximum.</string>
+    <string name="hint_start_binary">Un simple tap quand c\'est fait.</string>
+    <string name="hint_start_quantity">La journée est réussie quand tu atteins ton minimum.</string>
+    <string name="field_unit">Unité</string>
+    <string name="field_unit_hint">verres, pages…</string>
+    <string name="field_step">Pas des boutons +/−</string>
+    <string name="field_threshold_max">Maximum par jour</string>
+    <string name="field_threshold_min">Minimum par jour</string>
+    <string name="field_frequency">Fréquence</string>
+    <string name="field_start_date">Date de début</string>
+    <string name="field_savings">Économies (facultatif)</string>
+    <string name="field_savings_hint">Renseigne le prix d\'une unité et ta consommation habituelle pour voir l\'argent économisé.</string>
+    <string name="field_unit_cost">Prix unitaire</string>
+    <string name="field_baseline">Conso. habituelle / jour</string>
+    <string name="field_passive">Mode passif</string>
+    <string name="field_passive_hint">Je ne note que mes écarts : les jours sans saisie comptent comme réussis.</string>
+    <string name="field_motivation_hint">Pourquoi est-ce important pour toi ?</string>
+    <string name="field_reminders">Rappels</string>
+    <string name="error_name">Donne un nom à ton habitude</string>
+    <string name="error_duplicate">Tu suis déjà « %1$s ».</string>
+    <string name="error_duplicate_archived">« %1$s » existe déjà dans tes habitudes archivées : désarchive-la plutôt.</string>
+    <string name="action_open_existing">Ouvrir « %1$s »</string>
+    <string name="error_threshold">Indique un nombre valide</string>
+    <string name="error_days">Choisis au moins un jour</string>
+
+    <!-- Badges -->
+    <plurals name="badges_count">
+        <item quantity="one">%1$d badge obtenu sur %2$d</item>
+        <item quantity="other">%1$d badges obtenus sur %2$d</item>
+    </plurals>
+    <string name="badges_empty">Aucun badge dans cette catégorie pour l\'instant.</string>
+    <string name="badge_all_tiers">Tous les paliers atteints !</string>
+    <string name="badge_kept_forever">Badge acquis pour toujours, même si l\'habitude a été supprimée.</string>
+    <string name="badge_unlocked_on">Obtenu le %1$s</string>
+    <string name="badge_unlocked">Nouveau badge débloqué !</string>
+    <string name="filter_all">Tous</string>
+    <string name="filter_unlocked">Débloqués</string>
+    <string name="filter_in_progress">En cours</string>
+    <string name="filter_closest">Les plus proches</string>
+
+    <!-- Cartes à collectionner -->
+    <string name="badges_tab_badges">Badges</string>
+    <string name="badges_tab_cards">Cartes (%1$d)</string>
+    <string name="cards_intro">Une carte par jour, tirée en direct de Wikipédia dès que ta journée est renseignée. Plus elle est réussie, plus la carte est rare : 100 % → légendaire, 50 % et plus → rare.</string>
+    <plurals name="cards_count">
+        <item quantity="one">%1$d carte</item>
+        <item quantity="other">%1$d cartes</item>
+    </plurals>
+    <string name="cards_empty">Aucune carte pour l\'instant. Renseigne toutes tes habitudes du jour pour tirer ta première carte !</string>
+    <string name="card_of_the_day">Ta carte du jour</string>
+    <string name="card_debug">Carte de test</string>
+    <string name="card_day_rate">Journée réussie à %1$d %%</string>
+    <string name="card_drawing">Tirage en direct sur Wikipédia…</string>
+    <string name="card_offline">Pas de connexion : ta carte t\'attend dans l\'onglet Cartes, elle sera tirée dès ton retour en ligne.</string>
+    <string name="card_retry">Réessayer</string>
+    <string name="card_pending_tile">À tirer</string>
+    <string name="card_tap_to_flip">Touche la carte pour la retourner</string>
+    <string name="card_read_more">Lire la carte</string>
+    <string name="card_later">Plus tard</string>
+    <string name="card_open_wikipedia">Lire sur Wikipédia</string>
+    <string name="card_of_day">Carte du %1$s</string>
+    <string name="card_views">Article consulté %1$s fois sur Wikipédia ces 30 derniers jours</string>
+    <string name="card_credits_image">Image : %1$s — %2$s</string>
+    <string name="card_credits_text">Texte : Wikipédia (fr), licence CC BY-SA 4.0</string>
+    <string name="rarity_common">Commune</string>
+    <string name="rarity_rare">Rare</string>
+    <string name="rarity_legendary">Légendaire</string>
+    <string name="theme_all">Toutes</string>
+    <string name="settings_debug">Débogage</string>
+    <string name="debug_draw_card">Tirer une carte :</string>
+    <string name="debug_reset_cards">Oublier mes cartes</string>
+
+    <!-- Découvrir -->
+    <string name="catalog_custom">Créer la mienne</string>
+    <string name="catalog_custom_hint">Une habitude sur mesure, avec ton propre objectif.</string>
+    <string name="catalog_section_stop">Arrêter ou limiter</string>
+    <string name="catalog_section_start">Commencer</string>
+    <string name="catalog_tracked">Déjà suivie</string>
+    <string name="article_sources">Sources</string>
+    <string name="article_updated">Dernière mise à jour : %1$s</string>
+    <string name="help_title">Besoin d\'aide ?</string>
+    <string name="help_card_hint">Des professionnels gratuits et anonymes, au téléphone ou en ligne.</string>
+    <string name="help_intro">Ces services sont gratuits, anonymes et tenus par des professionnels. N\'hésite pas : demander de l\'aide est une force.</string>
+    <string name="help_website">Site web</string>
+    <string name="medical_disclaimer">Cette application ne remplace pas un avis médical. En cas de dépendance, parles-en à un professionnel de santé. En cas d\'urgence, appelle le 15 ou le 112.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Ton journal, à ta façon</string>
+    <string name="onboarding_1_body">Chaque jour, note tes réussites et tes écarts en un geste. Arrêter, limiter ou commencer : c\'est toi qui choisis.</string>
+    <string name="onboarding_2_title">Prends du recul</string>
+    <string name="onboarding_2_body">Calendrier, séries, carte de chaleur : vois ta progression sur une semaine, un trimestre ou une année.</string>
+    <string name="onboarding_3_title">Collectionne les badges</string>
+    <string name="onboarding_3_body">Chaque progrès compte, même après un écart. Vois à l\'avance ce qu\'il te reste pour débloquer le prochain badge.</string>
+    <string name="onboarding_skip">Passer</string>
+    <string name="onboarding_next">Suivant</string>
+    <string name="onboarding_back">Retour</string>
+    <string name="onboarding_later">Plus tard</string>
+    <string name="onboarding_start">C\'est parti !</string>
+    <string name="onboarding_choose_title">Par quoi veux-tu commencer ?</string>
+    <string name="onboarding_choose_body">Choisis une ou plusieurs habitudes. Tu pourras tout modifier ensuite.</string>
+    <string name="onboarding_config_title">Derniers réglages</string>
+    <string name="onboarding_goals">Tes objectifs</string>
+    <string name="onboarding_goals_hint">Des valeurs raisonnables sont proposées. Mieux vaut un objectif atteignable qu\'un objectif parfait.</string>
+
+    <!-- Paramètres -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_profile">Profil</string>
+    <string name="settings_first_name">Prénom (facultatif)</string>
+    <string name="settings_currency">Devise</string>
+    <string name="settings_journal">Journal</string>
+    <string name="settings_day_start">Début de journée</string>
+    <string name="settings_day_start_hint">Une saisie faite avant cette heure compte pour la veille.</string>
+    <string name="settings_first_day">Premier jour de la semaine</string>
+    <string name="settings_triggers">Modifier les déclencheurs</string>
+    <string name="settings_appearance">Apparence</string>
+    <string name="theme_system">Système</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Sombre</string>
+    <string name="settings_dynamic_color">Couleurs de mon fond d\'écran (Material You)</string>
+    <string name="settings_evening_reminder">Rappel du soir</string>
+    <string name="settings_evening_reminder_hint">Uniquement s\'il reste des habitudes à renseigner.</string>
+    <string name="settings_time">Heure : %1$s</string>
+    <string name="settings_security">Confidentialité</string>
+    <string name="settings_app_lock">Verrouiller l\'application</string>
+    <string name="settings_app_lock_hint">Empreinte digitale (ou code de ton téléphone) à l\'ouverture et après 30 s en arrière-plan.</string>
+    <string name="settings_app_lock_hint_no_fingerprint">Aucune empreinte enregistrée : le code de ton téléphone sera demandé. Ajoute une empreinte dans les réglages Android pour plus de confort.</string>
+    <string name="settings_app_lock_no_screen_lock">Configure d\'abord un verrouillage d\'écran (empreinte, code ou schéma) dans les réglages Android.</string>
+    <string name="settings_app_lock_unsupported">Nécessite Android 10 ou plus récent.</string>
+    <string name="lock_prompt_title">Déverrouiller Bullet</string>
+    <string name="lock_prompt_subtitle">Ton journal reste privé</string>
+    <string name="lock_locked">Bullet est verrouillée</string>
+    <string name="lock_unlock">Déverrouiller</string>
+    <string name="export_password_title">Protéger l\'export</string>
+    <string name="export_password_text">Le fichier sera chiffré (AES-256). Sans ce mot de passe, personne ne pourra le lire — toi non plus : note-le bien, il ne peut pas être récupéré.</string>
+    <string name="export_password_min">Au moins %1$d caractères</string>
+    <string name="export_password_mismatch">Les deux mots de passe sont différents</string>
+    <string name="export_encrypt">Chiffrer et exporter</string>
+    <string name="export_unencrypted">Exporter sans chiffrement (lisible par tous)</string>
+    <string name="field_password">Mot de passe</string>
+    <string name="field_password_confirm">Confirmer le mot de passe</string>
+    <string name="import_password_title">Fichier protégé</string>
+    <string name="import_password_text">Cet export est chiffré. Saisis le mot de passe choisi lors de l\'export.</string>
+    <string name="import_password_wrong">Mot de passe incorrect</string>
+    <string name="import_decrypt">Déchiffrer</string>
+    <string name="cd_show_password">Afficher le mot de passe</string>
+    <string name="cd_hide_password">Masquer le mot de passe</string>
+    <string name="settings_data">Mes données</string>
+    <string name="settings_privacy">Tes données restent sur ce téléphone. Aucun compte, aucun envoi. Seule connexion : Wikipédia, pour tirer les cartes à collectionner (seuls des titres d\'articles sont demandés). Exporte tes données pour les sauvegarder ou changer d\'appareil.</string>
+    <string name="settings_export">Exporter</string>
+    <string name="settings_import">Importer</string>
+    <string name="settings_exported">Données exportées</string>
+    <string name="settings_imported">Données importées</string>
+    <string name="settings_deleted">Toutes les données ont été supprimées</string>
+    <string name="settings_error">Erreur : %1$s</string>
+    <string name="settings_delete_all">Supprimer toutes mes données</string>
+    <string name="settings_delete_all_text">Habitudes, journal, badges : tout sera effacé de ce téléphone. Pense à exporter avant.</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_replay_onboarding">Revoir la présentation</string>
+    <string name="settings_about_app">À propos de l\'application</string>
+    <string name="about_text">Version %1$s.\n\nUne application bienveillante pour arrêter, limiter ou commencer ce que tu veux, à ton rythme.\n\nAucune donnée collectée. Les cartes à collectionner proviennent de Wikipédia et Wikimedia Commons (textes CC BY-SA 4.0, images sous licences libres). Bibliothèques open source : AndroidX, Jetpack Compose, Kotlin, Dagger Hilt, Room (licence Apache 2.0).</string>
+    <string name="import_title">Importer des données</string>
+    <plurals name="import_preview">
+        <item quantity="one">Ce fichier contient %d habitude.</item>
+        <item quantity="other">Ce fichier contient %d habitudes.</item>
+    </plurals>
+    <string name="import_modes">Fusionner : la donnée la plus récente l\'emporte.\nRemplacer : les données actuelles sont effacées.</string>
+    <string name="import_merge">Fusionner</string>
+    <string name="import_replace">Remplacer tout</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_reminders">Rappels</string>
+    <string name="notif_channel_reminders_desc">Rappels pour renseigner tes habitudes</string>
+    <string name="notif_habit_text">C\'est le moment de faire le point ✨</string>
+    <string name="notif_evening_title">Comment s\'est passée ta journée ?</string>
+    <plurals name="notif_evening_text">
+        <item quantity="one">Il te reste %d habitude à renseigner.</item>
+        <item quantity="other">Il te reste %d habitudes à renseigner.</item>
+    </plurals>
+
+    <!-- Widget : uniquement des chiffres, jamais le nom des habitudes (l'application peut être verrouillée). -->
+    <string name="widget_description">Avancement des objectifs du jour</string>
+    <!-- Sous l'anneau « 3/5 » : -->
+    <plurals name="widget_caption">
+        <item quantity="one">objectif tenu\naujourd\'hui</item>
+        <item quantity="other">objectifs tenus\naujourd\'hui</item>
+    </plurals>
+    <!-- Lu par TalkBack : -->
+    <plurals name="widget_summary">
+        <item quantity="one">%1$d / %2$d objectif tenu aujourd\'hui</item>
+        <item quantity="other">%1$d / %2$d objectifs tenus aujourd\'hui</item>
+    </plurals>
+    <string name="widget_nothing_today">Rien de prévu\naujourd\'hui</string>
+    <string name="widget_ratio">%1$d/%2$d</string>
+</resources>

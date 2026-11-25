@@ -1,0 +1,1048 @@
+{
+ "categories": [
+  {
+   "id": "health",
+   "name": "Santé",
+   "emoji": "❤️"
+  },
+  {
+   "id": "food",
+   "name": "Alimentation",
+   "emoji": "🥕"
+  },
+  {
+   "id": "wellbeing",
+   "name": "Bien-être",
+   "emoji": "🌿"
+  },
+  {
+   "id": "mind",
+   "name": "Esprit",
+   "emoji": "🧠"
+  },
+  {
+   "id": "money",
+   "name": "Argent",
+   "emoji": "💰"
+  },
+  {
+   "id": "screens",
+   "name": "Écrans",
+   "emoji": "📱"
+  }
+ ],
+ "templates": [
+  {
+   "id": "smoking",
+   "category": "health",
+   "name": "Cigarette",
+   "emoji": "🚭",
+   "color": 6,
+   "direction": "QUIT",
+   "mode": "QUANTITY",
+   "unit": "cigarettes",
+   "unitCostCents": 65,
+   "baselinePerDay": 10,
+   "summary": "Arrêter de fumer, à ton rythme.",
+   "help": [
+    "tabac",
+    "urgence"
+   ],
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi arrêter",
+      "paragraphs": [
+       "Arrêter de fumer est bénéfique à tout âge : les bienfaits commencent dès les premières heures et continuent pendant des années.",
+       "C'est aussi une économie importante : renseigne le prix d'une cigarette pour la voir grandir jour après jour."
+      ]
+     },
+     {
+      "title": "Ce qui se passe quand tu arrêtes",
+      "timeline": [
+       {
+        "time": "20 min",
+        "text": "La tension artérielle et le pouls commencent à revenir à la normale."
+       },
+       {
+        "time": "8 h",
+        "text": "Le taux de monoxyde de carbone dans le sang diminue de moitié."
+       },
+       {
+        "time": "48 h",
+        "text": "Le goût et l'odorat commencent à s'améliorer."
+       },
+       {
+        "time": "2 à 12 sem.",
+        "text": "La circulation sanguine et le souffle s'améliorent."
+       },
+       {
+        "time": "1 an",
+        "text": "Le risque d'infarctus est nettement réduit par rapport à un fumeur."
+       }
+      ]
+     },
+     {
+      "title": "Comment s'y prendre",
+      "bullets": [
+       "Fixe une date d'arrêt et préviens ton entourage.",
+       "Les substituts nicotiniques (patchs, gommes…) doublent les chances de réussite ; parles-en à un pharmacien ou à un médecin.",
+       "Éloigne briquets et cendriers, change les routines associées (café, pause).",
+       "Une cigarette fumée n'efface pas tes progrès : note-la et repars."
+      ]
+     },
+     {
+      "title": "Gérer les envies",
+      "bullets": [
+       "Retarder : une envie forte dure souvent quelques minutes. Attends 5 minutes avant de décider.",
+       "Respirer : 5 minutes de cohérence cardiaque (inspire 5 s, expire 5 s) apaisent la tension.",
+       "Remplacer : un verre d'eau, une marche, un message à un proche.",
+       "Repérer tes déclencheurs dans l'application pour les anticiper la prochaine fois."
+      ]
+     }
+    ],
+    "sources": [
+     "Tabac Info Service",
+     "Santé publique France",
+     "Organisation mondiale de la santé"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "alcohol",
+   "category": "health",
+   "name": "Alcool",
+   "emoji": "🍷",
+   "color": 3,
+   "direction": "LIMIT",
+   "mode": "QUANTITY",
+   "unit": "verres",
+   "threshold": 2,
+   "unitCostCents": 400,
+   "baselinePerDay": 3,
+   "summary": "Réduire sa consommation d'alcool.",
+   "help": [
+    "alcool",
+    "urgence"
+   ],
+   "article": {
+    "sections": [
+     {
+      "title": "Repères",
+      "paragraphs": [
+       "Les repères de consommation à moindre risque en France : pas plus de 10 verres standard par semaine, pas plus de 2 verres par jour, et des jours sans alcool dans la semaine.",
+       "Un verre standard contient environ 10 g d'alcool pur : un verre de vin (10 cl), un demi de bière (25 cl) ou une dose de spiritueux (3 cl)."
+      ]
+     },
+     {
+      "title": "Bénéfices d'une réduction",
+      "bullets": [
+       "Meilleur sommeil et plus d'énergie au réveil.",
+       "Baisse de la tension artérielle et du risque de nombreuses maladies.",
+       "Humeur plus stable et économies."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Alterne chaque verre d'alcool avec un verre d'eau.",
+       "Prévois des jours sans alcool et note-les comme des victoires.",
+       "Choisis des boissons sans alcool que tu aimes vraiment.",
+       "Attention : en cas de forte consommation quotidienne, un arrêt brutal peut être dangereux. Demande un avis médical."
+      ]
+     },
+     {
+      "title": "Gérer les envies",
+      "bullets": [
+       "Retarder : une envie forte dure souvent quelques minutes. Attends 5 minutes avant de décider.",
+       "Respirer : 5 minutes de cohérence cardiaque (inspire 5 s, expire 5 s) apaisent la tension.",
+       "Remplacer : un verre d'eau, une marche, un message à un proche.",
+       "Repérer tes déclencheurs dans l'application pour les anticiper la prochaine fois."
+      ]
+     }
+    ],
+    "sources": [
+     "Alcool Info Service",
+     "Santé publique France"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "meat",
+   "category": "food",
+   "name": "Viande",
+   "emoji": "🥩",
+   "color": 9,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Des journées sans viande.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi réduire",
+      "paragraphs": [
+       "Réduire la viande, en particulier la viande rouge et la charcuterie, est recommandé pour la santé. C'est aussi l'un des gestes les plus efficaces pour réduire son empreinte environnementale."
+      ]
+     },
+     {
+      "title": "Par où commencer",
+      "bullets": [
+       "Commence par 1 ou 2 jours sans viande par semaine, puis augmente.",
+       "Les légumineuses (lentilles, pois chiches, haricots) associées aux céréales apportent des protéines complètes.",
+       "Teste une nouvelle recette végétarienne chaque semaine.",
+       "Œufs, produits laitiers, tofu, tempeh : de nombreuses sources de protéines existent."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)",
+     "ANSES"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "sugar",
+   "category": "food",
+   "name": "Sucreries et sodas",
+   "emoji": "🍬",
+   "color": 3,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Des journées sans sucre ajouté.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi",
+      "paragraphs": [
+       "Les sucres ajoutés sont présents dans de nombreux produits transformés. En réduire la consommation aide à stabiliser l'énergie dans la journée et protège les dents et la santé à long terme."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Remplace les sodas par de l'eau pétillante aromatisée (citron, menthe).",
+       "Garde des fruits à portée de main pour les envies de sucré.",
+       "Lis les étiquettes : le sucre se cache aussi dans les plats préparés et sauces.",
+       "Le goût s'habitue en quelques semaines : les aliments te paraîtront plus sucrés."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)",
+     "Organisation mondiale de la santé"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "social_media",
+   "category": "screens",
+   "name": "Réseaux sociaux",
+   "emoji": "📱",
+   "color": 4,
+   "direction": "LIMIT",
+   "mode": "DURATION",
+   "threshold": 60,
+   "step": 15,
+   "summary": "Limiter le temps passé sur les réseaux.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi",
+      "paragraphs": [
+       "Le défilement sans fin est conçu pour capter l'attention. Reprendre la main sur ce temps libère des moments pour ce qui compte et améliore souvent le sommeil et la concentration."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Consulte le temps d'écran de ton téléphone (Bien-être numérique) pour noter ta valeur.",
+       "Désactive les notifications non essentielles.",
+       "Range le téléphone hors de la chambre la nuit.",
+       "Remplace un moment de défilement par une activité de la liste « Commencer »."
+      ]
+     }
+    ],
+    "sources": [
+     "Santé publique France"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "coffee",
+   "category": "health",
+   "name": "Café",
+   "emoji": "☕",
+   "color": 9,
+   "direction": "LIMIT",
+   "mode": "QUANTITY",
+   "unit": "tasses",
+   "threshold": 2,
+   "summary": "Moins de caféine, meilleur sommeil.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi",
+      "paragraphs": [
+       "Consommée avec modération, la caféine est bien tolérée par la plupart des adultes. En excès ou trop tard dans la journée, elle peut perturber le sommeil et augmenter la nervosité."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Évite le café après 14 h si tu dors mal.",
+       "Réduis progressivement pour limiter les maux de tête.",
+       "Alterne avec du décaféiné ou des infusions."
+      ]
+     }
+    ],
+    "sources": [
+     "ANSES",
+     "EFSA"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "snacking",
+   "category": "food",
+   "name": "Grignotage",
+   "emoji": "🍪",
+   "color": 1,
+   "direction": "QUIT",
+   "mode": "QUANTITY",
+   "unit": "grignotages",
+   "step": 1,
+   "summary": "Ne plus grignoter entre les repas.",
+   "article": {
+    "sections": [
+     {
+      "title": "Comprendre",
+      "paragraphs": [
+       "Le grignotage répond souvent à l'ennui, au stress ou à la fatigue plutôt qu'à la faim. Repérer ces moments est la première étape."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Prends trois vrais repas complets et une collation prévue si besoin.",
+       "Bois un grand verre d'eau quand l'envie arrive.",
+       "Ne garde pas de grignotage à portée de main.",
+       "Utilise le champ « déclencheur » pour comprendre tes moments à risque."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "gambling",
+   "category": "money",
+   "name": "Jeux d'argent",
+   "emoji": "🎰",
+   "color": 10,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Arrêter les paris et jeux d'argent.",
+   "help": [
+    "jeux",
+    "urgence"
+   ],
+   "article": {
+    "sections": [
+     {
+      "title": "Reconnaître le problème",
+      "paragraphs": [
+       "Jouer plus que prévu, chercher à « se refaire », cacher ses pertes : ce sont des signaux d'alerte. Le jeu excessif est une addiction reconnue, et on peut s'en sortir."
+      ]
+     },
+     {
+      "title": "Agir",
+      "bullets": [
+       "Demande ton inscription au fichier des interdits de jeux (démarche volontaire auprès de l'ANJ).",
+       "Supprime les applications de paris et bloque les sites.",
+       "Confie la gestion de ton budget à une personne de confiance pendant un temps.",
+       "Parle-en : Joueurs Info Service répond gratuitement et anonymement."
+      ]
+     },
+     {
+      "title": "Gérer les envies",
+      "bullets": [
+       "Retarder : une envie forte dure souvent quelques minutes. Attends 5 minutes avant de décider.",
+       "Respirer : 5 minutes de cohérence cardiaque (inspire 5 s, expire 5 s) apaisent la tension.",
+       "Remplacer : un verre d'eau, une marche, un message à un proche.",
+       "Repérer tes déclencheurs dans l'application pour les anticiper la prochaine fois."
+      ]
+     }
+    ],
+    "sources": [
+     "Joueurs Info Service",
+     "Autorité nationale des jeux (ANJ)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "shopping",
+   "category": "money",
+   "name": "Achats impulsifs",
+   "emoji": "🛍️",
+   "color": 6,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Des journées sans achat superflu.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Règle des 48 h : attends deux jours avant tout achat non prévu.",
+       "Désinscris-toi des newsletters commerciales.",
+       "Supprime tes cartes enregistrées sur les sites marchands.",
+       "Note l'argent non dépensé : c'est une victoire concrète."
+      ]
+     }
+    ],
+    "sources": [
+     "Institut national de la consommation"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "cannabis",
+   "category": "health",
+   "name": "Cannabis",
+   "emoji": "🌿",
+   "color": 8,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Arrêter ou réduire le cannabis.",
+   "help": [
+    "drogues",
+    "urgence"
+   ],
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi arrêter",
+      "paragraphs": [
+       "Le cannabis peut affecter la mémoire, la concentration, la motivation et le sommeil, en particulier chez les jeunes. Arrêter permet souvent de retrouver de l'énergie et de la clarté."
+      ]
+     },
+     {
+      "title": "Les premiers jours",
+      "paragraphs": [
+       "Irritabilité, troubles du sommeil ou de l'appétit peuvent apparaître et s'atténuent généralement en quelques semaines. Les Consultations jeunes consommateurs (CJC) accompagnent gratuitement."
+      ]
+     },
+     {
+      "title": "Gérer les envies",
+      "bullets": [
+       "Retarder : une envie forte dure souvent quelques minutes. Attends 5 minutes avant de décider.",
+       "Respirer : 5 minutes de cohérence cardiaque (inspire 5 s, expire 5 s) apaisent la tension.",
+       "Remplacer : un verre d'eau, une marche, un message à un proche.",
+       "Repérer tes déclencheurs dans l'application pour les anticiper la prochaine fois."
+      ]
+     }
+    ],
+    "sources": [
+     "Drogues Info Service",
+     "Santé publique France"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "nail_biting",
+   "category": "wellbeing",
+   "name": "Se ronger les ongles",
+   "emoji": "💅",
+   "color": 3,
+   "direction": "QUIT",
+   "mode": "BINARY",
+   "summary": "Laisser ses ongles tranquilles.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Garde les ongles courts et soignés.",
+       "Occupe tes mains (balle anti-stress, bague, stylo).",
+       "Repère les moments où ça arrive : écrans, stress, ennui.",
+       "Un vernis amer peut aider à prendre conscience du geste."
+      ]
+     }
+    ],
+    "sources": [
+     "Assurance Maladie (ameli.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "video_games",
+   "category": "screens",
+   "name": "Jeux vidéo",
+   "emoji": "🎮",
+   "color": 6,
+   "direction": "LIMIT",
+   "mode": "DURATION",
+   "threshold": 90,
+   "step": 15,
+   "summary": "Garder le jeu comme un plaisir.",
+   "help": [
+    "jeux"
+   ],
+   "article": {
+    "sections": [
+     {
+      "title": "Trouver l'équilibre",
+      "paragraphs": [
+       "Le jeu vidéo est un loisir. Il devient problématique quand il empiète sur le sommeil, le travail ou les relations."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Fixe une heure de fin avant de commencer une session.",
+       "Utilise un minuteur ou le contrôle du temps de la console.",
+       "Évite les écrans dans l'heure qui précède le coucher."
+      ]
+     }
+    ],
+    "sources": [
+     "Santé publique France"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "sport",
+   "category": "health",
+   "name": "Sport",
+   "emoji": "🏃",
+   "color": 2,
+   "direction": "START",
+   "mode": "DURATION",
+   "threshold": 30,
+   "step": 10,
+   "frequency": "TIMES_PER_WEEK",
+   "timesPerWeek": 3,
+   "summary": "Bouger régulièrement, sans pression.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi bouger",
+      "paragraphs": [
+       "L'activité physique régulière améliore la santé du cœur, l'humeur, le sommeil et réduit le stress. L'OMS recommande au moins 150 minutes d'activité modérée par semaine pour les adultes."
+      ]
+     },
+     {
+      "title": "Bien démarrer",
+      "bullets": [
+       "Commence petit : 3 séances de 20 à 30 minutes par semaine suffisent pour démarrer.",
+       "Choisis une activité qui te plaît, c'est la clé de la régularité.",
+       "Prévois tes séances dans ton agenda comme un rendez-vous.",
+       "Échauffe-toi et augmente progressivement l'intensité."
+      ]
+     }
+    ],
+    "sources": [
+     "Organisation mondiale de la santé",
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "reading",
+   "category": "mind",
+   "name": "Lecture",
+   "emoji": "📚",
+   "color": 0,
+   "direction": "START",
+   "mode": "QUANTITY",
+   "unit": "pages",
+   "threshold": 20,
+   "step": 5,
+   "summary": "Lire un peu chaque jour.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi lire",
+      "paragraphs": [
+       "Lire régulièrement nourrit la curiosité, le vocabulaire et la concentration. Quelques pages avant de dormir remplacent avantageusement les écrans."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Garde toujours un livre sur toi ou ta table de chevet.",
+       "20 pages par jour, c'est environ un livre toutes les deux semaines.",
+       "Tu as le droit d'abandonner un livre qui ne te plaît pas.",
+       "Les bibliothèques municipales prêtent gratuitement."
+      ]
+     }
+    ],
+    "sources": [
+     "Centre national du livre"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "vegan",
+   "category": "food",
+   "name": "Journée végane",
+   "emoji": "🥦",
+   "color": 8,
+   "direction": "START",
+   "mode": "BINARY",
+   "summary": "Manger 100 % végétal.",
+   "article": {
+    "sections": [
+     {
+      "title": "Les bases",
+      "paragraphs": [
+       "Une alimentation végane exclut tous les produits d'origine animale. Bien construite, elle peut couvrir les besoins, à condition de veiller à certains nutriments."
+      ]
+     },
+     {
+      "title": "Points de vigilance",
+      "bullets": [
+       "La vitamine B12 doit être supplémentée : demande conseil à un professionnel de santé.",
+       "Associe légumineuses et céréales pour les protéines.",
+       "Pense au calcium (eaux minérales riches, tofu, légumes verts), au fer et aux oméga-3 (noix, colza, lin).",
+       "Commence par une journée végane par semaine avant d'aller plus loin."
+      ]
+     }
+    ],
+    "sources": [
+     "ANSES",
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "vegetarian",
+   "category": "food",
+   "name": "Journée végétarienne",
+   "emoji": "🥗",
+   "color": 2,
+   "direction": "START",
+   "mode": "BINARY",
+   "summary": "Ni viande ni poisson aujourd'hui.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Œufs, produits laitiers et légumineuses couvrent facilement les besoins en protéines.",
+       "Explore les cuisines du monde, riches en plats végétariens.",
+       "Prépare à l'avance une base de légumineuses cuites pour la semaine."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "meditation",
+   "category": "wellbeing",
+   "name": "Méditation",
+   "emoji": "🧘",
+   "color": 6,
+   "direction": "START",
+   "mode": "DURATION",
+   "threshold": 10,
+   "step": 5,
+   "summary": "Quelques minutes de calme chaque jour.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi",
+      "paragraphs": [
+       "La pratique régulière de la méditation de pleine conscience aide à mieux gérer le stress et les émotions."
+      ]
+     },
+     {
+      "title": "Bien démarrer",
+      "bullets": [
+       "5 à 10 minutes par jour valent mieux qu'une longue séance par mois.",
+       "Choisis un moment fixe : au réveil ou avant de dormir.",
+       "Concentre-toi sur ta respiration ; quand l'esprit s'égare, reviens-y sans te juger."
+      ]
+     }
+    ],
+    "sources": [
+     "Assurance Maladie (ameli.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "water",
+   "category": "health",
+   "name": "Boire de l'eau",
+   "emoji": "💧",
+   "color": 4,
+   "direction": "START",
+   "mode": "QUANTITY",
+   "unit": "verres",
+   "threshold": 6,
+   "summary": "S'hydrater tout au long de la journée.",
+   "article": {
+    "sections": [
+     {
+      "title": "Repères",
+      "paragraphs": [
+       "L'eau est la seule boisson indispensable. Les besoins varient selon l'activité, la chaleur et la personne ; boire régulièrement par petites quantités est la meilleure stratégie."
+      ]
+     },
+     {
+      "title": "Astuces",
+      "bullets": [
+       "Garde une gourde à portée de main.",
+       "Bois un verre au réveil et à chaque repas.",
+       "Ajoute citron, menthe ou concombre pour varier."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "walking",
+   "category": "health",
+   "name": "Marche",
+   "emoji": "🚶",
+   "color": 2,
+   "direction": "START",
+   "mode": "QUANTITY",
+   "unit": "pas",
+   "threshold": 7000,
+   "step": 1000,
+   "summary": "Faire ses pas chaque jour.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi marcher",
+      "paragraphs": [
+       "La marche est l'activité la plus accessible : elle améliore la santé cardiovasculaire, l'humeur et le sommeil."
+      ]
+     },
+     {
+      "title": "Astuces",
+      "bullets": [
+       "Descends un arrêt plus tôt, prends les escaliers.",
+       "Passe tes appels en marchant.",
+       "Une marche de 10 minutes après le repas aide la digestion."
+      ]
+     }
+    ],
+    "sources": [
+     "Organisation mondiale de la santé"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "sleep",
+   "category": "wellbeing",
+   "name": "Se coucher à heure fixe",
+   "emoji": "😴",
+   "color": 0,
+   "direction": "START",
+   "mode": "BINARY",
+   "summary": "Un sommeil régulier et réparateur.",
+   "article": {
+    "sections": [
+     {
+      "title": "Pourquoi",
+      "paragraphs": [
+       "Des horaires réguliers aident l'horloge biologique et améliorent la qualité du sommeil."
+      ]
+     },
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Couche-toi et lève-toi à heures fixes, même le week-end.",
+       "Coupe les écrans 1 h avant de dormir.",
+       "Chambre fraîche, sombre et calme.",
+       "Évite caféine et repas lourds le soir."
+      ]
+     }
+    ],
+    "sources": [
+     "Institut national du sommeil et de la vigilance",
+     "Assurance Maladie (ameli.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "journaling",
+   "category": "mind",
+   "name": "Écrire son journal",
+   "emoji": "✍️",
+   "color": 7,
+   "direction": "START",
+   "mode": "BINARY",
+   "summary": "Quelques lignes pour faire le point.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Trois phrases suffisent : ce qui s'est passé, ce que tu ressens, ce que tu retiens.",
+       "Utilise le champ « note » de l'application ou un carnet.",
+       "Relis-toi de temps en temps pour mesurer le chemin parcouru."
+      ]
+     }
+    ],
+    "sources": [],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "language",
+   "category": "mind",
+   "name": "Apprendre une langue",
+   "emoji": "🗣️",
+   "color": 5,
+   "direction": "START",
+   "mode": "DURATION",
+   "threshold": 15,
+   "step": 5,
+   "summary": "Un peu chaque jour plutôt que beaucoup rarement.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "15 minutes par jour sont plus efficaces que 2 heures une fois par semaine.",
+       "Alterne vocabulaire, écoute et expression.",
+       "Regarde des séries en version originale sous-titrée."
+      ]
+     }
+    ],
+    "sources": [],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "gratitude",
+   "category": "wellbeing",
+   "name": "Gratitude",
+   "emoji": "🙏",
+   "color": 1,
+   "direction": "START",
+   "mode": "BINARY",
+   "summary": "Noter 3 choses positives de la journée.",
+   "article": {
+    "sections": [
+     {
+      "title": "Le principe",
+      "paragraphs": [
+       "Chaque soir, note trois choses positives de ta journée, même petites. Cette pratique aide à porter attention à ce qui va bien."
+      ]
+     },
+     {
+      "title": "Astuces",
+      "bullets": [
+       "Sois précis : « le café avec Léa » plutôt que « mes amis ».",
+       "Utilise la note de l'entrée du jour pour les écrire."
+      ]
+     }
+    ],
+    "sources": [],
+    "updated": "2026-11"
+   }
+  },
+  {
+   "id": "cooking",
+   "category": "food",
+   "name": "Cuisiner maison",
+   "emoji": "🍳",
+   "color": 1,
+   "direction": "START",
+   "mode": "BINARY",
+   "frequency": "TIMES_PER_WEEK",
+   "timesPerWeek": 4,
+   "summary": "Des repas faits maison.",
+   "article": {
+    "sections": [
+     {
+      "title": "Conseils",
+      "bullets": [
+       "Prévois les menus de la semaine et fais une liste de courses.",
+       "Cuisine en plus grande quantité pour les jours pressés.",
+       "Des recettes simples en 20 minutes suffisent."
+      ]
+     }
+    ],
+    "sources": [
+     "Programme national nutrition santé (mangerbouger.fr)"
+    ],
+    "updated": "2026-11"
+   }
+  }
+ ],
+ "help": [
+  {
+   "id": "tabac",
+   "name": "Tabac Info Service",
+   "description": "Conseils et accompagnement personnalisé par des tabacologues.",
+   "phone": "39 89",
+   "url": "https://www.tabac-info-service.fr"
+  },
+  {
+   "id": "alcool",
+   "name": "Alcool Info Service",
+   "description": "Écoute, information et orientation, 7 j/7, anonyme.",
+   "phone": "0 980 980 930",
+   "url": "https://www.alcool-info-service.fr"
+  },
+  {
+   "id": "drogues",
+   "name": "Drogues Info Service",
+   "description": "Écoute et information sur les drogues, 7 j/7, gratuit et anonyme.",
+   "phone": "0 800 23 13 13",
+   "url": "https://www.drogues-info-service.fr"
+  },
+  {
+   "id": "jeux",
+   "name": "Joueurs Info Service",
+   "description": "Aide pour les joueurs et leur entourage, 7 j/7, anonyme.",
+   "phone": "09 74 75 13 13",
+   "url": "https://www.joueurs-info-service.fr"
+  },
+  {
+   "id": "urgence",
+   "name": "Urgences",
+   "description": "SAMU (15) ou numéro d'urgence européen (112).",
+   "phone": "112"
+  }
+ ],
+ "badges": [
+  {
+   "id": "first_step",
+   "emoji": "👣",
+   "title": "Premier pas",
+   "description": "Saisir ta toute première entrée."
+  },
+  {
+   "id": "streak",
+   "emoji": "🔥",
+   "title": "Série",
+   "description": "Enchaîner {n} {unit} réussis d'affilée."
+  },
+  {
+   "id": "perfect_month",
+   "emoji": "🌕",
+   "title": "Mois parfait",
+   "description": "Réussir {n} mois civils sans aucun écart."
+  },
+  {
+   "id": "rebound",
+   "emoji": "🌱",
+   "title": "Rebond",
+   "description": "Repartir pour au moins 3 jours après un écart, {n} fois."
+  },
+  {
+   "id": "journal",
+   "emoji": "📓",
+   "title": "Assidu·e du journal",
+   "description": "Renseigner toutes tes habitudes pendant {n} {unit}."
+  },
+  {
+   "id": "writer",
+   "emoji": "📝",
+   "title": "Plume",
+   "description": "Écrire {n} notes dans ton journal."
+  },
+  {
+   "id": "saver",
+   "emoji": "💰",
+   "title": "Économe",
+   "description": "Économiser {n} {unit}."
+  },
+  {
+   "id": "cumulative",
+   "emoji": "⏳",
+   "title": "Cumul",
+   "description": "Atteindre un total de {n} {unit}."
+  },
+  {
+   "id": "juggler",
+   "emoji": "🤹",
+   "title": "Jongleur·se",
+   "description": "Suivre {n} habitudes en même temps depuis une semaine."
+  },
+  {
+   "id": "curious",
+   "emoji": "🔎",
+   "title": "Curieux·se",
+   "description": "Lire {n} fiches du catalogue."
+  },
+  {
+   "id": "solid_quarter",
+   "emoji": "🏛️",
+   "title": "Trimestre solide",
+   "description": "Atteindre 80 % de réussite sur {n} {unit} civils."
+  },
+  {
+   "id": "anniversary",
+   "emoji": "🎂",
+   "title": "Anniversaire",
+   "description": "Suivre cette habitude depuis {n} {unit}."
+  },
+  {
+   "id": "lungs_free",
+   "emoji": "🌬️",
+   "title": "Poumons libres",
+   "description": "30 jours d'affilée sans tabac."
+  },
+  {
+   "id": "dry_month",
+   "emoji": "🍵",
+   "title": "Mois sobre",
+   "description": "30 jours d'affilée dans ton objectif alcool."
+  },
+  {
+   "id": "veggie",
+   "emoji": "🥕",
+   "title": "Veggie",
+   "description": "30 jours d'affilée sans viande."
+  },
+  {
+   "id": "bookworm",
+   "emoji": "📖",
+   "title": "Bibliophile",
+   "description": "Lire {n} pages au total."
+  }
+ ],
+ "encouragements": [
+  "Un écart ne définit pas ton parcours. Ce qui compte, c'est la tendance, et tu es en train de la construire.",
+  "Tu as noté ce moment : c'est déjà reprendre le contrôle. Demain est une nouvelle page.",
+  "Les changements durables se font rarement en ligne droite. Sois aussi bienveillant·e avec toi qu'avec un ami.",
+  "Regarde ton calendrier : tous ces jours réussis sont toujours là. Un jour ne les efface pas.",
+  "Qu'est-ce qui a déclenché cet écart ? Le repérer, c'est te donner une longueur d'avance pour la prochaine fois.",
+  "Chaque reprise te rapproche du badge Rebond. On continue ?"
+ ]
+}
